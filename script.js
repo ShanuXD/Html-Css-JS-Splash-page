@@ -1,8 +1,6 @@
 const {body} = document;
 
-console.log(body)
 function changeBackground(number){
-    
     //check if background already shoeing
     let prevBackground
     if (body.className){
@@ -12,15 +10,11 @@ function changeBackground(number){
     body.className = ''
     switch(number){
         case '1':
-            body.classList.add('background-1')
-            break;
+            return (prevBackground === 'background-1' ? false : body.classList.add('background-1'));
         case '2':
-            body.classList.add('background-2')
-            break;
+            return (prevBackground === 'background-2' ? false : body.classList.add('background-2'));
         case '3':
-            body.classList.add('background-3')
-            break;
-        
+            return (prevBackground === 'background-3' ? false : body.classList.add('background-3'));
         default:
             break;
 
